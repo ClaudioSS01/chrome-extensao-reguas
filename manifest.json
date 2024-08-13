@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Extensão Chrome Regua",
+    "version": "1.0",
+    "description": "Adiciona réguas e linhas para alinhar elementos na página. Aperte X",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_icon": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["style.css"]
+      }
+    ],
+    "host_permissions": ["*://*/*"] 
+  }
